@@ -70,3 +70,49 @@ try {
 } catch (error) {
     console.log("You messed up", error);
 }
+
+// ES2020
+// BigInt
+typeof 1n;
+let valorMaximo = Number.MAX_SAFE_INTEGER;
+238592462463n + 235n;
+
+// Optional chaining operator ?
+let will_pokemon = {
+    pikachu: {
+        species: "Mouse Pokemon",
+        height: 0.4,
+        weight: 30
+    }
+};
+
+let andrei_pokemon = {
+    raichu: {
+        species: "Mouse Pokemon",
+        height: 0.8,
+        weight: 6,
+        power: ""
+    }
+};
+
+let weight = will_pokemon.pikachu.weight;
+console.log("weight:", weight);
+
+if (andrei_pokemon && andrei_pokemon.pikachu && andrei_pokemon.pikachu.weight) {
+    let weight2 = andrei_pokemon.pikachu.weight;
+    console.log(weight2);
+} else {
+    let weight2 = undefined;
+    console.log(weight2);
+}
+
+let weight3 = andrei_pokemon?.pikachu?.weight;
+console.log(weight3);
+
+// Nullish Coalescing Operator ??
+// let power = andrei_pokemon?.pikachu?.power || "no power";
+let power = andrei_pokemon?.pikachu?.power ?? "no power";
+
+// ES2021
+const str = "ztm is the best of the best";
+str.replaceAll("best", "worst");
